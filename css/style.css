@@ -1,0 +1,237 @@
+/* 更新全局样式 */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f5f5f7;
+    color: #1d1d1f;
+    line-height: 1.5;
+    min-height: 100vh;
+    padding: 20px 0;
+}
+
+/* 优化主容器样式 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    animation: fadeIn 0.5s ease;
+}
+
+/* 添加渐入动画 */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* 优化标题样式 */
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 1rem;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    background: linear-gradient(135deg, #1d1d1f 0%, #434343 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+header p {
+    color: #86868b;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+/* 优化上传区域样式 */
+.upload-area {
+    background: white;
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    text-align: center;
+    border: 2px dashed #d2d2d7;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04);
+}
+
+.upload-area:hover {
+    border-color: #0071e3;
+    background: #f5f5f7;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+}
+
+.upload-icon {
+    width: 64px;
+    height: 64px;
+    fill: #0071e3;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.upload-area:hover .upload-icon {
+    transform: scale(1.1);
+}
+
+/* 优化预览容器样式 */
+.preview-container {
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem;
+    margin-top: 2rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    animation: slideUp 0.5s ease;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.preview-section {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 2.5rem;
+}
+
+.preview-box {
+    flex: 1;
+    text-align: center;
+}
+
+.preview-box h3 {
+    font-size: 1.3rem;
+    color: #1d1d1f;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.image-container {
+    margin: 1rem 0;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #f5f5f7;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.image-container:hover {
+    transform: scale(1.02);
+}
+
+/* 优化控制区域样式 */
+.controls {
+    border-top: 1px solid #d2d2d7;
+    padding-top: 2rem;
+    margin-top: 1rem;
+}
+
+.quality-control {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+}
+
+.quality-control label {
+    font-weight: 500;
+    color: #1d1d1f;
+    min-width: 90px;
+}
+
+input[type="range"] {
+    flex: 1;
+    height: 6px;
+    background: #d2d2d7;
+    border-radius: 3px;
+    outline: none;
+    -webkit-appearance: none;
+    transition: background 0.3s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 24px;
+    height: 24px;
+    background: #0071e3;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 113, 227, 0.3);
+    transition: all 0.3s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 113, 227, 0.4);
+}
+
+.download-btn {
+    background: #0071e3;
+    color: white;
+    border: none;
+    padding: 1rem 3rem;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+    display: block;
+    margin: 0 auto;
+}
+
+.download-btn:hover {
+    background: #0077ed;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 113, 227, 0.2);
+}
+
+/* 优化响应式设计 */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    header h1 {
+        font-size: 2.2rem;
+    }
+    
+    .preview-section {
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .upload-area {
+        padding: 2rem 1rem;
+    }
+    
+    .quality-control {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+    
+    .quality-control label {
+        text-align: center;
+    }
+}
+
+/* 添加文件信息样式 */
+.file-info {
+    color: #86868b;
+    font-size: 1rem;
+    padding: 0.8rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.file-info span:last-child {
+    font-weight: 500;
+    color: #1d1d1f;
+}
